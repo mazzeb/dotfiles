@@ -62,7 +62,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+Shift+a focus child
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
@@ -70,8 +70,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -140,20 +140,20 @@ bar {
 
 #--------------------------------------------------------------------------------
 # Shutdown, Reboot, Lock Screen, and Logout #657b83
-set $sysmenu "system:  [P]oweroff  re[B]oot  [L]ock  logou[T] "
+set $sysmenu "system:  [P]oweroff  [R]eboot  [L]ock  log[O]ut "
 bindsym $mod+Shift+Return      mode $sysmenu
 mode $sysmenu {
     bindsym p         exec shutdown -P now
-    bindsym b         exec shutdown -r now
+    bindsym r         exec shutdown -r now
     bindsym l         exec i3lock
-    bindsym t         exec --no-startup-id i3-msg exit, mode "default"
+    bindsym o         exec --no-startup-id i3-msg exit, mode "default"
     bindsym Return    mode "default"
     bindsym Escape    mode "default"
 }
 
 #--------------------------------------------------------------------------------
 # shortcuts
-set $appmenu "start:  [C]loudstation  [D]ropbox [I]ntelliJ "
+set $appmenu "start:  [C]loudstation  [D]ropbox  [I]ntelliJ "
 bindsym $mod+x      mode $appmenu
 mode $appmenu {
     bindsym c         exec --no-startup-id synology-cloud-station autostart, mode "default"

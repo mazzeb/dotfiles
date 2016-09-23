@@ -1,0 +1,62 @@
+[global_config]
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+  [[1l2r]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = ae831e9a-bfe4-4158-b28e-a689b205a42f
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 0:37
+      size = 2560, 1360
+      title = matthias@tiny: ~/dotfiles
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 1278
+      ratio = 0.4998046875
+      type = HPaned
+    [[[child3]]]
+      order = 1
+      parent = child1
+      position = 678
+      ratio = 0.499632352941
+      type = VPaned
+    [[[terminal2]]]
+      order = 0
+      parent = child1
+      profile = default
+      type = Terminal
+      uuid = ae831e9a-bfe4-4158-b28e-a689b205a42f
+    [[[terminal4]]]
+      order = 0
+      parent = child3
+      profile = default
+      type = Terminal
+      uuid = fc6faaed-9516-4072-a6b3-ff9c8b9f0722
+    [[[terminal5]]]
+      order = 1
+      parent = child3
+      profile = default
+      type = Terminal
+      uuid = 574ae989-faac-439a-9f30-c7e6016355e4
+[plugins]
+[profiles]
+  [[default]]
+    background_image = None
+    font = Monospace 13
+    scroll_on_output = False
+    scrollback_infinite = True
+    scrollback_lines = 10000
+    scrollbar_position = hidden
+    use_system_font = False

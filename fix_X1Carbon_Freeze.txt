@@ -1,2 +1,0 @@
-# In /etc/default/grub add line
-GRUB_CMDLINE_LINUX_DEFAULT="quiet splash intel_idle.max_cstate=1"

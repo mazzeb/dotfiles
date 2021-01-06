@@ -11,29 +11,37 @@ general {
         interval = 5
 }
 
+order += "memory"
 order += "disk /"
-order += "wireless _first_"
-order += "battery all"
 order += "load"
+order += "battery 0"
+order += "wireless _first_"
 order += "tztime local"
 
 wireless _first_ {
-        format_up = "W: (%quality at %essid) %ip"
+        format_up = "W: (%quality at %essid)"
         format_down = "W: down"
 }
 
-battery all {
-        format = "%status %percentage %remaining"
+battery 0 {
+        format = "%percentage %remaining %consumption"
+        last_full_capacity = true
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+        format = "%d.%m. %H:%M:%S"
 }
 
 load {
-        format = "%1min"
+        format = "L: %1min"
 }
 
 disk "/" {
-        format = "%avail"
+        format = "D: %avail"
+}
+
+memory {
+        format = "M: %available (%used)"
+        threshold_degraded = "10%"
+        format_degraded = "MEMORY: %free"
 }
